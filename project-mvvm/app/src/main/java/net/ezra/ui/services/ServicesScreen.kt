@@ -61,7 +61,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.net.toUri
+//import androidx.core.net.toUri
 import androidx.navigation.NavHostController
 import com.google.api.Context
 import hilt_aggregated_deps._dagger_hilt_android_internal_modules_ApplicationContextModule
@@ -73,6 +73,7 @@ import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_PRODUCTS
 import net.ezra.navigation.ROUTE_SERVICES
+import net.ezra.navigation.ROUTE_SIGNUP
 
 
 data class Screen(val title: String, val icon: Int)
@@ -123,7 +124,7 @@ fun ServicesScreen(navController: NavHostController) {
                 },
 
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xff0FB06A),
+                    containerColor = Color(0xff01735e),
                     titleContentColor = Color.White,
 
                     )
@@ -146,68 +147,68 @@ fun ServicesScreen(navController: NavHostController) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Color(0xff9AEDC9)),
+                        .background(Color(0xff0b818c)),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
 
-                    Text(
-                        text = "call via",
-                        fontSize = 20.sp,
-                        modifier = Modifier
-                            .padding(16.dp)
-                            .clickable {
-
-                                val intent = Intent(Intent.ACTION_DIAL)
-                                intent.data = Uri.parse("tel:+254746434045")
-
-                                callLauncher.launch(intent)
-                            }
-                    )
-
-                    Text(
-                        text = "muleli kelvin developer",
-                        fontSize = 20.sp,
-                    )
-
-                    Spacer(modifier = Modifier.height(15.dp))
-
-                    Text(
-                        modifier = Modifier
-
-                            .clickable {
-                                navController.navigate(ROUTE_LOGIN) {
-                                    popUpTo(ROUTE_HOME) { inclusive = true }
-                                }
-                            },
-                        text = "Login Here",
-                        textAlign = TextAlign.Center,
-                        fontSize = 20.sp,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
-
-                    Spacer(modifier = Modifier.height(14.dp))
-
-                    Text(
-                        modifier = Modifier
-
-                            .clickable {
-                                navController.navigate(ROUTE_LOGIN) {
-                                    popUpTo(ROUTE_HOME) { inclusive = true }
-                                }
-                            },
-                        text = "Dont have an account Register Here!",
-                        textAlign = TextAlign.Center,
-                        fontSize = 20.sp,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
+//                    Text(
+//                        text = "call via",
+//                        fontSize = 20.sp,
+//                        modifier = Modifier
+//                            .padding(16.dp)
+//                            .clickable {
+//
+//                                val intent = Intent(Intent.ACTION_DIAL)
+//                                intent.data = Uri.parse("tel:+2546434045")
+//
+//                                callLauncher.launch(intent)
+//                            }
+//                    )
+//
+//                    Text(
+//                        text = "muleli kelvin developer",
+//                        fontSize = 20.sp,
+//                    )
+//
+//                    Spacer(modifier = Modifier.height(15.dp))
+//
+//                    Text(
+//                        modifier = Modifier
+//
+//                            .clickable {
+//                                navController.navigate(ROUTE_LOGIN) {
+//                                    popUpTo(ROUTE_HOME) { inclusive = true }
+//                                }
+//                            },
+//                        text = "Login Here",
+//                        textAlign = TextAlign.Center,
+//                        fontSize = 20.sp,
+//                        color = MaterialTheme.colorScheme.onSurface
+//                    )
+//
+//                    Spacer(modifier = Modifier.height(14.dp))
+//
+//                    Text(
+//                        modifier = Modifier
+//
+//                            .clickable {
+//                                navController.navigate(ROUTE_SIGNUP) {
+//                                    popUpTo(ROUTE_HOME) { inclusive = true }
+//                                }
+//                            },
+//                        text = "Dont have an account Register Here!",
+//                        textAlign = TextAlign.Center,
+//                        fontSize = 20.sp,
+//                        color = MaterialTheme.colorScheme.onSurface
+//                    )
 
                     Text(
                         modifier = Modifier
 
                             .clickable {
                                 navController.navigate(ROUTE_ADD_STUDENTS) {
-                                    popUpTo(ROUTE_HOME) { inclusive = true }
+                                    popUpTo(ROUTE_SERVICES) { inclusive = true }
                                 }
                             },
                         text = "Travel more",
@@ -253,228 +254,228 @@ fun ServicesScreen(navController: NavHostController) {
 
 @Composable
 fun AnimatedDrawer(isOpen: Boolean, onClose: () -> Unit) {
-    val drawerWidth = remember { Animatable(if (isOpen) 250f else 0f) }
-
-    LaunchedEffect(isOpen) {
-        drawerWidth.animateTo(if (isOpen) 250f else 0f, animationSpec = tween(durationMillis = 300))
-    }
-
-    Surface(
-        modifier = Modifier
-            .fillMaxHeight()
-            .width(drawerWidth.value.dp)
-        ,
-        color=Color.Cyan,
-        // color = Color.LightGray,
-//        elevation = 16.dp
-    ) {
-
-
-
-
-
-
-        val mContext = LocalContext.current
-
-        Column {
-//            Text(
-//                text = "Drawer Item 1"
+//    val drawerWidth = remember { Animatable(if (isOpen) 250f else 0f) }
+//
+//    LaunchedEffect(isOpen) {
+//        drawerWidth.animateTo(if (isOpen) 250f else 0f, animationSpec = tween(durationMillis = 300))
+//    }
+//
+//    Surface(
+//        modifier = Modifier
+//            .fillMaxHeight()
+//            .width(drawerWidth.value.dp)
+//        ,
+//        color=Color(0xff0a9fa9),
+//        // color = Color.LightGray,
+////        elevation = 16.dp
+//    ) {
+//
+//
+//
+//
+//
+//
+//        val mContext = LocalContext.current
+//
+//        Column {
+////            Text(
+////                text = "Drawer Item 1"
+////
+////            )
+////            Text(
+////                text = "Drawer Item 2"
+////            )
+////            Text(
+////                text = "Drawer Item 3",
+////                modifier = Modifier.clickable {  }
+////            )
+//
+//            Spacer(modifier = Modifier.height(16.dp))
+//         Text(text = "muleli kelvin developer")
+//
+//
+//            OutlinedButton(onClick = {
+//                val shareIntent=Intent(Intent.ACTION_SEND)
+//                shareIntent.type="text/pain"
+//                shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("kelvinmuleli514@gmail.com"))
+//                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"subject")
+//                shareIntent.putExtra(Intent.EXTRA_TEXT,"Welcome to the Business email address")
+//                mContext.startActivity(shareIntent)
+//            },
+//                modifier= Modifier
+//                    // .fillMaxSize()
+//                    .padding(start = 10.dp, end = 10.dp),
+//                shape = RoundedCornerShape(11.dp),
+//                border = BorderStroke(2.dp, Color.White))
+//
+//            {
+//                Text(text = "Email",color=Color.Black, fontWeight = FontWeight.Black)
+//            }
+//
+//
+//
+//            OutlinedButton(onClick = {
+//                val shareIntent=Intent(Intent.ACTION_SEND)
+//                shareIntent.type="text/plain"
+//                shareIntent.putExtra(Intent.EXTRA_TEXT,"Share Out")
+//                //  _dagger_hilt_android_internal_modules_ApplicationContextModule.startActivity(Intent.createChooser(shareIntent,"Share"))
+//                mContext.startActivity(Intent.createChooser(shareIntent,"Share"))
+//
+//            },
+//                modifier= Modifier
+//                    //.fillMaxSize()
+//                    .padding(start = 10.dp, end = 10.dp),
+//                shape = RoundedCornerShape(10.dp),
+//                border = BorderStroke(2.dp,color=Color.White)
+//
+//            ) {
+//                Text(text = "Share", color=Color.Black)
+//            }
+//
+//
+//
+//
+//            OutlinedButton(
+//                onClick = {
+//
+//                    val simToolKitLaunchIntent =
+//                        mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+//                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+//
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 30.dp, end = 30.dp),
+//                shape = RoundedCornerShape(5.dp),
+//                border = BorderStroke(2.dp, Color.Red)
+//            ) {
+//                Text(text = "Mpesa", color = Color.Black)
+//
+//            }
+//            Spacer(modifier = Modifier.height(15.dp))
+//
+//            OutlinedButton(
+//                onClick = {
+//
+//                    val cameraIntent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//                    if (cameraIntent.resolveActivity(mContext.packageManager)!=null){
+//                        mContext.startActivity(cameraIntent)
+//                    }else{
+//                        println("Camera app is not available")
+//                    }
+//
+//
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 30.dp, end = 30.dp),
+//                shape = RoundedCornerShape(5.dp),
+//                border = BorderStroke(2.dp, Color.Red)
+//            ) {
+//                Text(text = "Camera", color = Color.Black)
+//
+//            }
+//            Spacer(modifier = Modifier.height(15.dp))
+//
+//            OutlinedButton(
+//                onClick = {
+//
+//                    val smsIntent=Intent(Intent.ACTION_SENDTO)
+//                    smsIntent.data="smsto:0746434045".toUri()
+//                    smsIntent.putExtra("sms_body","Hello muleli kelvin,how was your day?")
+//                    mContext.startActivity(smsIntent)
+//
+//
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 30.dp, end = 30.dp),
+//                shape = RoundedCornerShape(5.dp),
+//                border = BorderStroke(2.dp, Color.Red)
+//            ) {
+//                Text(text = "Sms", color = Color.Black)
+//
+//            }
+//            Spacer(modifier = Modifier.height(15.dp))
+//
+//            OutlinedButton(
+//                onClick = {
+//
+//                    val callIntent=Intent(Intent.ACTION_DIAL)
+//                    callIntent.data="tel:0746434045".toUri()
+//                    mContext.startActivity(callIntent)
+//
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 30.dp, end = 30.dp),
+//                shape = RoundedCornerShape(5.dp),
+//                border = BorderStroke(2.dp, Color.Red)
+//            ) {
+//                Text(text = "Call", color = Color.Black)
+//
+//            }
+//            Spacer(modifier = Modifier.height(15.dp))
+//
+//            OutlinedButton(
+//                onClick = {
+//
+//                    val shareIntent = Intent(Intent.ACTION_SEND)
+//                    shareIntent.type = "text/plain"
+//                    shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("mulelikelvin21@gmail.com"))
+//                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
+//                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the email body")
+//                    mContext.startActivity(shareIntent)
+//
+//
+//
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 30.dp, end = 30.dp),
+//                shape = RoundedCornerShape(5.dp),
+//                border = BorderStroke(2.dp, Color.Red)
+//            ) {
+//                Text(text = "email", color = Color.Black)
+//
+//            }
+//            Spacer(modifier = Modifier.height(15.dp))
+//
+//            OutlinedButton(
+//                onClick = {
+//                    val shareIntent=Intent(Intent.ACTION_SEND)
+//                    shareIntent.type="text/plain"
+//                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this is a cool content")
+//                    mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
+//
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 30.dp, end = 30.dp),
+//                shape = RoundedCornerShape(5.dp),
+//                border = BorderStroke(2.dp, Color.Red)
+//            ) {
+//                Text(text = "Share", color = Color.Black)
+//
+//            }
+//            Spacer(modifier = Modifier.height(15.dp))
+//
+//
+//
+//            Text(text = "Already have an account",
+//                fontSize = 20.sp,
+//                fontWeight = FontWeight.Bold,
+//                textAlign = TextAlign.Center,
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .clickable { mContext.startActivity(Intent(mContext, ROUTE_LOGIN::class.java)) }
 //
 //            )
-//            Text(
-//                text = "Drawer Item 2"
-//            )
-//            Text(
-//                text = "Drawer Item 3",
-//                modifier = Modifier.clickable {  }
-//            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-         Text(text = "muleli kelvin developer")
-
-
-            OutlinedButton(onClick = {
-                val shareIntent=Intent(Intent.ACTION_SEND)
-                shareIntent.type="text/pain"
-                shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("maxkuol38@gmail.com"))
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"subject")
-                shareIntent.putExtra(Intent.EXTRA_TEXT,"Welcome to the Business email address")
-                mContext.startActivity(shareIntent)
-            },
-                modifier= Modifier
-                    // .fillMaxSize()
-                    .padding(start = 10.dp, end = 10.dp),
-                shape = RoundedCornerShape(10.dp),
-                border = BorderStroke(2.dp, Color.White))
-
-            {
-                Text(text = "Email",color=Color.Black)
-            }
-
-
-
-            OutlinedButton(onClick = {
-                val shareIntent=Intent(Intent.ACTION_SEND)
-                shareIntent.type="text/plain"
-                shareIntent.putExtra(Intent.EXTRA_TEXT,"Share Out")
-                //  _dagger_hilt_android_internal_modules_ApplicationContextModule.startActivity(Intent.createChooser(shareIntent,"Share"))
-                mContext.startActivity(Intent.createChooser(shareIntent,"Share"))
-
-            },
-                modifier= Modifier
-                    //.fillMaxSize()
-                    .padding(start = 10.dp, end = 10.dp),
-                shape = RoundedCornerShape(10.dp),
-                border = BorderStroke(2.dp,color=Color.White)
-
-            ) {
-                Text(text = "Share", color=Color.Black)
-            }
-
-
-
-
-            OutlinedButton(
-                onClick = {
-
-                    val simToolKitLaunchIntent =
-                        mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
-
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 30.dp, end = 30.dp),
-                shape = RoundedCornerShape(5.dp),
-                border = BorderStroke(2.dp, Color.Red)
-            ) {
-                Text(text = "Mpesa", color = Color.Black)
-
-            }
-            Spacer(modifier = Modifier.height(15.dp))
-
-            OutlinedButton(
-                onClick = {
-
-                    val cameraIntent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                    if (cameraIntent.resolveActivity(mContext.packageManager)!=null){
-                        mContext.startActivity(cameraIntent)
-                    }else{
-                        println("Camera app is not available")
-                    }
-
-
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 30.dp, end = 30.dp),
-                shape = RoundedCornerShape(5.dp),
-                border = BorderStroke(2.dp, Color.Red)
-            ) {
-                Text(text = "Camera", color = Color.Black)
-
-            }
-            Spacer(modifier = Modifier.height(15.dp))
-
-            OutlinedButton(
-                onClick = {
-
-                    val smsIntent=Intent(Intent.ACTION_SENDTO)
-                    smsIntent.data="smsto:0769184414".toUri()
-                    smsIntent.putExtra("sms_body","Hello Madul,how was your day?")
-                    mContext.startActivity(smsIntent)
-
-
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 30.dp, end = 30.dp),
-                shape = RoundedCornerShape(5.dp),
-                border = BorderStroke(2.dp, Color.Red)
-            ) {
-                Text(text = "Sms", color = Color.Black)
-
-            }
-            Spacer(modifier = Modifier.height(15.dp))
-
-            OutlinedButton(
-                onClick = {
-
-                    val callIntent=Intent(Intent.ACTION_DIAL)
-                    callIntent.data="tel:0720245837".toUri()
-                    mContext.startActivity(callIntent)
-
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 30.dp, end = 30.dp),
-                shape = RoundedCornerShape(5.dp),
-                border = BorderStroke(2.dp, Color.Red)
-            ) {
-                Text(text = "Call", color = Color.Black)
-
-            }
-            Spacer(modifier = Modifier.height(15.dp))
-
-            OutlinedButton(
-                onClick = {
-
-                    val shareIntent = Intent(Intent.ACTION_SEND)
-                    shareIntent.type = "text/plain"
-                    shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("akinyiglory2@gmail.com"))
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the email body")
-                    mContext.startActivity(shareIntent)
-
-
-
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 30.dp, end = 30.dp),
-                shape = RoundedCornerShape(5.dp),
-                border = BorderStroke(2.dp, Color.Red)
-            ) {
-                Text(text = "email", color = Color.Black)
-
-            }
-            Spacer(modifier = Modifier.height(15.dp))
-
-            OutlinedButton(
-                onClick = {
-                    val shareIntent=Intent(Intent.ACTION_SEND)
-                    shareIntent.type="text/plain"
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this is a cool content")
-                    mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
-
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 30.dp, end = 30.dp),
-                shape = RoundedCornerShape(5.dp),
-                border = BorderStroke(2.dp, Color.Red)
-            ) {
-                Text(text = "Share", color = Color.Black)
-
-            }
-            Spacer(modifier = Modifier.height(15.dp))
-
-
-
-            Text(text = "Already have an account",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { mContext.startActivity(Intent(mContext, ROUTE_LOGIN::class.java)) }
-
-            )
-
-
-        }
-    }
-
+//
+//
+//        }
+//    }
+//
 
 
 //            IconButton(onClick = {  }) {
@@ -501,7 +502,8 @@ fun BottomBar(navController: NavHostController) {
     val selectedIndex = remember { mutableStateOf(0) }
     BottomNavigation(
         elevation = 10.dp,
-        backgroundColor = Color(0xff0FB06A)
+        backgroundColor = Color(0xff01735e
+        )
 
 
     ) {

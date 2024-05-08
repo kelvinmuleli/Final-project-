@@ -56,17 +56,17 @@ fun ShopScreen(navController: NavHostController) {
          ) {
              Text(text = "Tessia")
 
-             Spacer(modifier = Modifier.width(7.dp))
+             Spacer(modifier = Modifier.width(17.dp))
 
-             Spacer(modifier = Modifier.height(27.dp))
+             Spacer(modifier = Modifier.height(17.dp))
 
              Text(text = "Mazda")
 
-             Spacer(modifier = Modifier.width(7.dp))
+             Spacer(modifier = Modifier.width(17.dp))
 
              Text(text = "BMW")
 
-             Spacer(modifier = Modifier.width(7.dp))
+             Spacer(modifier = Modifier.width(17.dp))
 
              Text(text = "Ferari")
 
@@ -95,7 +95,7 @@ LazyRow {
             Card {
                 Text(text = "Tesia Roadster")
 
-                Spacer(modifier = Modifier.height(7.dp))
+                Spacer(modifier = Modifier.height(17.dp))
 
                 Text(text = "Drive smmothly through a journey")
 
@@ -129,7 +129,49 @@ LazyRow {
 
 
                 Image(painter = painterResource(id = R.drawable.yolks),
-                    contentDescription = "")
+                    contentDescription = "", modifier = Modifier.size(12.dp))
+
+            }
+
+            Card {
+                Text(text = "Tesia Roadster")
+
+                Spacer(modifier = Modifier.height(7.dp))
+
+                Text(text = "Drive smmothly through a journey")
+
+
+            }
+
+
+            Button(onClick = {
+                navController.navigate(ROUTE_SERVICES) {
+                    popUpTo(ROUTE_SHOP) { inclusive = true }
+                }
+                //your onclick code here
+            }) {
+                Text(text = "$200/1 day ", color = Color.Blue)
+                Text(text = "Details", color = Color.Green)
+            }
+
+
+
+        }
+
+
+
+        Row (
+            modifier = Modifier
+
+                .background(Color(0xff1b7ce4))
+        ){
+
+            Text(text = "Available cars")
+            Card {
+
+
+                Image(painter = painterResource(id = R.drawable.yolks),
+                    contentDescription = "",modifier = Modifier.size(12.dp))
 
             }
 
@@ -171,49 +213,7 @@ LazyRow {
 
 
                 Image(painter = painterResource(id = R.drawable.yolks),
-                    contentDescription = "")
-
-            }
-
-            Card {
-                Text(text = "Tesia Roadster")
-
-                Spacer(modifier = Modifier.height(7.dp))
-
-                Text(text = "Drive smmothly through a journey")
-
-
-            }
-
-
-            Button(onClick = {
-                navController.navigate(ROUTE_SERVICES) {
-                    popUpTo(ROUTE_SHOP) { inclusive = true }
-                }
-                //your onclick code here
-            }) {
-                Text(text = "$200/1 day ", color = Color.Blue)
-                Text(text = "Details", color = Color.Green)
-            }
-
-
-
-        }
-
-
-
-        Row (
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color(0xff1b7ce4))
-        ){
-
-            Text(text = "Available cars")
-            Card {
-
-
-                Image(painter = painterResource(id = R.drawable.yolks),
-                    contentDescription = "")
+                    contentDescription = "",modifier = Modifier.size(12.dp))
 
             }
 
@@ -256,7 +256,7 @@ LazyRow {
 
 
                 Image(painter = painterResource(id = R.drawable.yolks),
-                    contentDescription = "")
+                    contentDescription = "",modifier = Modifier.size(12.dp))
 
             }
 
@@ -297,7 +297,7 @@ LazyRow {
 
 
                 Image(painter = painterResource(id = R.drawable.yolks),
-                    contentDescription = "")
+                    contentDescription = "",modifier = Modifier.size(12.dp))
 
             }
 
@@ -343,7 +343,7 @@ LazyRow {
              item {
                  Row (
                      modifier = Modifier
-                         .fillMaxWidth()
+
                          .background(Color.Transparent)
                  ){
 
@@ -352,7 +352,7 @@ LazyRow {
 
 
                          Image(painter = painterResource(id = R.drawable.klm),
-                             contentDescription = "")
+                             contentDescription = "",modifier = Modifier.size(12.dp))
 
                      }
 
@@ -379,7 +379,7 @@ LazyRow {
                  }
                  Row (
                      modifier = Modifier
-                         .fillMaxWidth()
+
                          .background(Color.Transparent)
                  ){
 
@@ -388,84 +388,7 @@ LazyRow {
 
 
                          Image(painter = painterResource(id = R.drawable.klm),
-                             contentDescription = "")
-
-                     }
-
-                     Card {
-                         Text(text = "Tesia Roadster")
-
-                         Spacer(modifier = Modifier.height(7.dp))
-
-                         Text(text = "Drive smmothly through a journey")
-
-
-                     }
-
-
-                     Button(onClick = {
-                         //your onclick code here
-                     }) {
-                         Text(text = "$200/1 day ", color = Color.Blue)
-                         Text(text = "Details", color = Color.Green)
-                     }
-
-
-
-                 }
-
-
-
-                 Row (
-                     modifier = Modifier
-                         .fillMaxWidth()
-                         .background(Color.Transparent)
-                 ){
-
-                     Text(text = "Available cars")
-                     Card {
-
-
-                         Image(painter = painterResource(id = R.drawable.klm),
-                             contentDescription = "")
-
-                     }
-
-                     Card {
-                         Text(text = "Tesia Roadster")
-
-                         Spacer(modifier = Modifier.height(7.dp))
-
-                         Text(text = "Drive smmothly through a journey")
-
-
-                     }
-
-
-                     Button(onClick = {
-                         //your onclick code here
-                     }) {
-                         Text(text = "$200/1 day ", color = Color.Blue)
-                         Text(text = "Details", color = Color.Green)
-                     }
-
-
-
-                 }
-
-
-                 Row (
-                     modifier = Modifier
-                         .fillMaxWidth()
-                         .background(Color.Transparent)
-                 ){
-
-                     Text(text = "Available cars")
-                     Card {
-
-
-                         Image(painter = painterResource(id = R.drawable.klm),
-                             contentDescription = "")
+                             contentDescription = "",modifier = Modifier.size(12.dp))
 
                      }
 
@@ -495,7 +418,7 @@ LazyRow {
 
                  Row (
                      modifier = Modifier
-                         .fillMaxWidth()
+
                          .background(Color.Transparent)
                  ){
 
@@ -504,7 +427,84 @@ LazyRow {
 
 
                          Image(painter = painterResource(id = R.drawable.klm),
-                             contentDescription = "")
+                             contentDescription = "",modifier = Modifier.size(12.dp))
+
+                     }
+
+                     Card {
+                         Text(text = "Tesia Roadster")
+
+                         Spacer(modifier = Modifier.height(7.dp))
+
+                         Text(text = "Drive smmothly through a journey")
+
+
+                     }
+
+
+                     Button(onClick = {
+                         //your onclick code here
+                     }) {
+                         Text(text = "$200/1 day ", color = Color.Blue)
+                         Text(text = "Details", color = Color.Green)
+                     }
+
+
+
+                 }
+
+
+                 Row (
+                     modifier = Modifier
+
+                         .background(Color.Transparent)
+                 ){
+
+                     Text(text = "Available cars")
+                     Card {
+
+
+                         Image(painter = painterResource(id = R.drawable.klm),
+                             contentDescription = "",modifier = Modifier.size(12.dp))
+
+                     }
+
+                     Card {
+                         Text(text = "Tesia Roadster")
+
+                         Spacer(modifier = Modifier.height(7.dp))
+
+                         Text(text = "Drive smmothly through a journey")
+
+
+                     }
+
+
+                     Button(onClick = {
+                         //your onclick code here
+                     }) {
+                         Text(text = "$200/1 day ", color = Color.Blue)
+                         Text(text = "Details", color = Color.Green)
+                     }
+
+
+
+                 }
+
+
+
+                 Row (
+                     modifier = Modifier
+
+                         .background(Color.Transparent)
+                 ){
+
+                     Text(text = "Available cars")
+                     Card {
+
+
+                         Image(painter = painterResource(id = R.drawable.klm),
+                             contentDescription = "",modifier = Modifier.size(12.dp))
 
                      }
 
@@ -547,7 +547,7 @@ LazyRow {
 
                  Row (
                      modifier = Modifier
-                         .fillMaxWidth()
+
                          .background(Color.Transparent)
                  ){
 
@@ -556,7 +556,7 @@ LazyRow {
 
 
                          Image(painter = painterResource(id = R.drawable.splash),
-                             contentDescription = "")
+                             contentDescription = "",modifier = Modifier.size(12.dp))
 
                      }
 
@@ -586,7 +586,7 @@ LazyRow {
 
                  Row (
                      modifier = Modifier
-                         .fillMaxWidth()
+
                          .background(Color.Transparent)
                  ){
 
@@ -595,131 +595,7 @@ LazyRow {
 
 
                          Image(painter = painterResource(id = R.drawable.splash),
-                             contentDescription = "")
-
-                     }
-
-                     Card {
-                         Text(text = "Tesia Roadster")
-
-                         Spacer(modifier = Modifier.height(7.dp))
-
-                         Text(text = "Drive smmothly through a journey")
-
-
-                     }
-
-
-                     Button(onClick = {
-                         //your onclick code here
-                     }) {
-                         Text(text = "$200/1 day ", color = Color.Blue)
-                         Text(text = "Details", color = Color.Green)
-                     }
-
-
-
-                 }
-
-
-
-
-
-
-                 Row (
-                     modifier = Modifier
-                         .fillMaxWidth()
-                         .background(Color.Transparent)
-                 ){
-
-                     Text(text = "Available cars")
-                     Card {
-
-
-                         Image(painter = painterResource(id = R.drawable.splash),
-                             contentDescription = "")
-
-                     }
-
-                     Card {
-                         Text(text = "Tesia Roadster")
-
-                         Spacer(modifier = Modifier.height(7.dp))
-
-                         Text(text = "Drive smmothly through a journey")
-
-
-                     }
-
-
-                     Button(onClick = {
-                         //your onclick code here
-                     }) {
-                         Text(text = "$200/1 day ", color = Color.Blue)
-                         Text(text = "Details", color = Color.Green)
-                     }
-
-
-
-                 }
-
-
-
-
-
-                 Row (
-                     modifier = Modifier
-                         .fillMaxWidth()
-                         .background(Color.Transparent)
-                 ){
-
-                     Text(text = "Available cars")
-                     Card {
-
-
-                         Image(painter = painterResource(id = R.drawable.splash),
-                             contentDescription = "")
-
-                     }
-
-                     Card {
-                         Text(text = "Tesia Roadster")
-
-                         Spacer(modifier = Modifier.height(7.dp))
-
-                         Text(text = "Drive smmothly through a journey")
-
-
-                     }
-
-
-                     Button(onClick = {
-                         //your onclick code here
-                     }) {
-                         Text(text = "$200/1 day ", color = Color.Blue)
-                         Text(text = "Details", color = Color.Green)
-                     }
-
-
-
-                 }
-
-
-
-
-
-                 Row (
-                     modifier = Modifier
-                         .fillMaxWidth()
-                         .background(Color.Transparent)
-                 ){
-
-                     Text(text = "Available cars")
-                     Card {
-
-
-                         Image(painter = painterResource(id = R.drawable.splash),
-                             contentDescription = "")
+                             contentDescription = "",modifier = Modifier.size(12.dp))
 
                      }
 
@@ -752,7 +628,7 @@ LazyRow {
 
                  Row (
                      modifier = Modifier
-                         .fillMaxWidth()
+
                          .background(Color.Transparent)
                  ){
 
@@ -761,7 +637,131 @@ LazyRow {
 
 
                          Image(painter = painterResource(id = R.drawable.splash),
-                             contentDescription = "")
+                             contentDescription = "",modifier = Modifier.size(12.dp))
+
+                     }
+
+                     Card {
+                         Text(text = "Tesia Roadster")
+
+                         Spacer(modifier = Modifier.height(7.dp))
+
+                         Text(text = "Drive smmothly through a journey")
+
+
+                     }
+
+
+                     Button(onClick = {
+                         //your onclick code here
+                     }) {
+                         Text(text = "$200/1 day ", color = Color.Blue)
+                         Text(text = "Details", color = Color.Green)
+                     }
+
+
+
+                 }
+
+
+
+
+
+                 Row (
+                     modifier = Modifier
+
+                         .background(Color.Transparent)
+                 ){
+
+                     Text(text = "Available cars")
+                     Card {
+
+
+                         Image(painter = painterResource(id = R.drawable.splash),
+                             contentDescription = "",modifier = Modifier.size(12.dp))
+
+                     }
+
+                     Card {
+                         Text(text = "Tesia Roadster")
+
+                         Spacer(modifier = Modifier.height(7.dp))
+
+                         Text(text = "Drive smmothly through a journey")
+
+
+                     }
+
+
+                     Button(onClick = {
+                         //your onclick code here
+                     }) {
+                         Text(text = "$200/1 day ", color = Color.Blue)
+                         Text(text = "Details", color = Color.Green)
+                     }
+
+
+
+                 }
+
+
+
+
+
+                 Row (
+                     modifier = Modifier
+
+                         .background(Color.Transparent)
+                 ){
+
+                     Text(text = "Available cars")
+                     Card {
+
+
+                         Image(painter = painterResource(id = R.drawable.splash),
+                             contentDescription = "",modifier = Modifier.size(12.dp))
+
+                     }
+
+                     Card {
+                         Text(text = "Tesia Roadster")
+
+                         Spacer(modifier = Modifier.height(7.dp))
+
+                         Text(text = "Drive smmothly through a journey")
+
+
+                     }
+
+
+                     Button(onClick = {
+                         //your onclick code here
+                     }) {
+                         Text(text = "$200/1 day ", color = Color.Blue)
+                         Text(text = "Details", color = Color.Green)
+                     }
+
+
+
+                 }
+
+
+
+
+
+
+                 Row (
+                     modifier = Modifier
+
+                         .background(Color.Transparent)
+                 ){
+
+                     Text(text = "Available cars")
+                     Card {
+
+
+                         Image(painter = painterResource(id = R.drawable.splash),
+                             contentDescription = "",modifier = Modifier.size(12.dp))
 
                      }
 

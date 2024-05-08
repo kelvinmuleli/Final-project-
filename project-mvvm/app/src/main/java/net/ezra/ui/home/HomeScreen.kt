@@ -68,6 +68,7 @@ import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.BlendMode.Companion.Screen
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_PRODUCTS
@@ -84,7 +85,9 @@ import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 fun HomeScreen(navController: NavHostController) {
     Scaffold(
         content = {
-            Box(modifier = Modifier.fillMaxSize()){
+            Box(modifier = Modifier
+                .fillMaxSize()
+                .background(Color.LightGray)){
 
                 LazyColumn (modifier = Modifier.fillMaxSize()){
 
@@ -116,7 +119,7 @@ fun HomeScreen(navController: NavHostController) {
                                 label = { Text(text = "Search places") },
                                 placeholder = { Text(text = "Search places") },
                                 modifier = Modifier
-                                    .background(Color.DarkGray)
+                                    .background(Color.Transparent)
                                     .width(290.dp)
                             )
                         }
@@ -126,15 +129,19 @@ fun HomeScreen(navController: NavHostController) {
 
 
 
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_SIGNUP)} } ,modifier = Modifier
+                                Card(onClick = { navController.navigate(ROUTE_ROUTES_LIST) { popUpTo(
+                                    ROUTE_HOME)} } ,modifier = Modifier
                                     .padding(15.dp)
-                                    .border(shape = RoundedCornerShape(10.dp), width = 1.dp, color = Color.White)
+                                    .border(
+                                        shape = RoundedCornerShape(10.dp),
+                                        width = 1.dp,
+                                        color = Color.White
+                                    )
                                     .shadow(elevation = 10.dp)
                                 ) {
                                     Row (horizontalArrangement = Arrangement.Absolute.Center, verticalAlignment = Alignment.CenterVertically, modifier = Modifier.background(
                                         Color.White)){
-                                        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "" , modifier = Modifier.size(70.dp))
+                                        Image(painter = painterResource(id = R.drawable.trn), contentDescription = "" , modifier = Modifier.size(70.dp))
                                         Text(text = "Safety Drive")
                                     }
                                 }
@@ -143,7 +150,11 @@ fun HomeScreen(navController: NavHostController) {
                                 Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
                                     ROUTE_ROUTES_LIST)} } ,modifier = Modifier
                                     .padding(15.dp)
-                                    .border(shape = RoundedCornerShape(10.dp), width = 1.dp, color = Color.White)
+                                    .border(
+                                        shape = RoundedCornerShape(10.dp),
+                                        width = 1.dp,
+                                        color = Color.White
+                                    )
                                     .shadow(elevation = 10.dp)) {
                                     Row(horizontalArrangement = Arrangement.Absolute.Center, verticalAlignment = Alignment.CenterVertically,modifier = Modifier.background(
                                         Color.White)) {
@@ -158,25 +169,33 @@ fun HomeScreen(navController: NavHostController) {
                                         ROUTE_PRODUCTS) } },
                                     modifier = Modifier
                                         .padding(15.dp)
-                                        .border(shape = RoundedCornerShape(10.dp), width = 1.dp, color = Color.White)
+                                        .border(
+                                            shape = RoundedCornerShape(10.dp),
+                                            width = 1.dp,
+                                            color = Color.White
+                                        )
                                         .shadow(elevation = 10.dp)
                                 ) {
                                     Row(horizontalArrangement = Arrangement.Absolute.Center, verticalAlignment = Alignment.CenterVertically,modifier = Modifier.background(
                                         Color.White)){
-                                        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "" , modifier = Modifier.size(70.dp))
+                                        Image(painter = painterResource(id = R.drawable.klm), contentDescription = "" , modifier = Modifier.size(70.dp))
                                         Text(text = " Places")
                                     }
                                 }
                                 Spacer(modifier = Modifier.width(15.dp))
 
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_PRODUCTS)} },modifier = Modifier
+                                Card(onClick = { navController.navigate(ROUTE_SHOP) { popUpTo(
+                                    ROUTE_HOME)} },modifier = Modifier
                                     .padding(15.dp)
-                                    .border(shape = RoundedCornerShape(10.dp), width = 1.dp, color = Color.White)
+                                    .border(
+                                        shape = RoundedCornerShape(10.dp),
+                                        width = 1.dp,
+                                        color = Color.White
+                                    )
                                     .shadow(elevation = 10.dp)) {
                                     Row (horizontalArrangement = Arrangement.Absolute.Center, verticalAlignment = Alignment.CenterVertically,modifier = Modifier.background(
                                         Color.White)){
-                                        Image(painter = painterResource(id = R.drawable.splash), contentDescription = "", modifier = Modifier.size(70.dp) )
+                                        Image(painter = painterResource(id = R.drawable.trm), contentDescription = "", modifier = Modifier.size(70.dp) )
                                         Text(text = " categories")
                                     }
                                 }
@@ -185,11 +204,15 @@ fun HomeScreen(navController: NavHostController) {
                                 Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
                                     ROUTE_SPLASH)} },modifier = Modifier
                                     .padding(15.dp)
-                                    .border(shape = RoundedCornerShape(10.dp), width = 1.dp, color = Color.White)
+                                    .border(
+                                        shape = RoundedCornerShape(10.dp),
+                                        width = 1.dp,
+                                        color = Color.White
+                                    )
                                     .shadow(elevation = 10.dp)) {
                                     Row (horizontalArrangement = Arrangement.Absolute.Center, verticalAlignment = Alignment.CenterVertically,modifier = Modifier.background(
                                         Color.White)){
-                                        Image(painter = painterResource(id = R.drawable.splash), contentDescription = "" , modifier = Modifier.size(70.dp))
+                                        Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "" , modifier = Modifier.size(70.dp))
                                         Text(text = " view all")
                                     }
                                 }
@@ -198,7 +221,11 @@ fun HomeScreen(navController: NavHostController) {
                                 Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
                                     ROUtE_VIEW_STUDENTS)} },modifier = Modifier
                                     .padding(15.dp)
-                                    .border(shape = RoundedCornerShape(10.dp), width = 1.dp, color = Color.White)
+                                    .border(
+                                        shape = RoundedCornerShape(10.dp),
+                                        width = 1.dp,
+                                        color = Color.White
+                                    )
                                     .shadow(elevation = 10.dp)) {
                                     Row (horizontalArrangement = Arrangement.Absolute.Center, verticalAlignment = Alignment.CenterVertically,modifier = Modifier.background(
                                         Color.White)){
@@ -230,13 +257,13 @@ fun HomeScreen(navController: NavHostController) {
 
                         LazyRow () {
                             item {
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_ABOUT) } }) {
+                                Card(onClick = { navController.navigate(ROUTE_LOGIN) { popUpTo(
+                                    ROUTE_HOME) } }) {
                                     Column() {
-                                        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "" , modifier = Modifier.fillMaxWidth(),contentScale = ContentScale.Crop)
+                                        Image(painter = painterResource(id = R.drawable.car), contentDescription = "" , modifier = Modifier.fillMaxWidth(),contentScale = ContentScale.Crop)
                                         Row(modifier=Modifier.fillMaxWidth()){
                                             Column (verticalArrangement = Arrangement.Center, horizontalAlignment = AbsoluteAlignment.Left){
-                                                Text(text = "Along Rift Valley")
+                                                Text(text = "Along Rift Valley travel")
                                                 Row (horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically){
                                                     Icon(imageVector =Icons.Default.LocationOn , contentDescription ="",modifier=Modifier.size(12.dp) )
                                                     Text(text = "Turkana-Kajiado")
@@ -254,11 +281,11 @@ fun HomeScreen(navController: NavHostController) {
                                 }
                                 Spacer(modifier = Modifier.width(13.dp))
 
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_ADD_STUDENTS)} }, ) {
+                                Card(onClick = { navController.navigate(ROUTE_ADD_STUDENTS) { popUpTo(
+                                    ROUTE_HOME)} }, ) {
                                     Column() {
-                                        Image(painter = painterResource(id = R.drawable.car), contentDescription = "" , modifier = Modifier.size(12.dp),contentScale = ContentScale.Crop)
-                                        Row(modifier=Modifier.width(200.dp)){
+                                        Image(painter = painterResource(id = R.drawable.car), contentDescription = "" , modifier = Modifier.size(112.dp),contentScale = ContentScale.Crop)
+                                        Row(modifier=Modifier.fillMaxWidth()){
                                             Column (verticalArrangement = Arrangement.Center, horizontalAlignment = AbsoluteAlignment.Left){
                                                 Text(text = "Summit Madness")
                                                 Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically){
@@ -323,10 +350,10 @@ fun HomeScreen(navController: NavHostController) {
                                 }
                                 Spacer(modifier = Modifier.width(13.dp))
 
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_SIGNUP)} },) {
+                                Card(onClick = { navController.navigate(ROUTE_SIGNUP) { popUpTo(
+                                    ROUTE_HOME)} },) {
                                     Column() {
-                                        Image(painter = painterResource(id = R.drawable.bs), contentDescription = "" , modifier = Modifier.size(12.dp),contentScale = ContentScale.Crop)
+                                        Image(painter = painterResource(id = R.drawable.bs), contentDescription = "" , modifier = Modifier.size(112.dp),contentScale = ContentScale.Crop)
                                         Row (modifier=Modifier.fillMaxWidth()){
                                             Column (verticalArrangement = Arrangement.Center, horizontalAlignment = AbsoluteAlignment.Left){
                                                 Text(text = "Kenya Classics")
@@ -349,10 +376,10 @@ fun HomeScreen(navController: NavHostController) {
                                 }
                                 Spacer(modifier = Modifier.width(13.dp))
 
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_BOOKMARKED_ROUTES)} },) {
+                                Card(onClick = { navController.navigate(ROUTE_BOOKMARKED_ROUTES) { popUpTo(
+                                    ROUTE_HOME)} },) {
                                     Column() {
-                                        Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "" , modifier = Modifier.fillMaxWidth(),contentScale = ContentScale.Crop)
+                                        Image(painter = painterResource(id = R.drawable.car), contentDescription = "" , modifier = Modifier.size(112.dp),contentScale = ContentScale.Crop)
                                         Row(modifier=Modifier.size(12.dp)) {
 
                                             Column (verticalArrangement = Arrangement.Center, horizontalAlignment = AbsoluteAlignment.Left){
@@ -373,11 +400,11 @@ fun HomeScreen(navController: NavHostController) {
                                 }
                                 Spacer(modifier = Modifier.width(13.dp))
 
-                                Card(onClick = { navController.navigate(ROUTE_HOME) { popUpTo(
-                                    ROUTE_ADD_STUDENTS)} },) {
+                                Card(onClick = { navController.navigate(ROUTE_ADD_STUDENTS) { popUpTo(
+                                    ROUTE_HOME)} },) {
 
                                     Column() {
-                                        Image(painter = painterResource(id = R.drawable.klm), contentDescription = "" , modifier = Modifier.size(12.dp),contentScale = ContentScale.Crop)
+                                        Image(painter = painterResource(id = R.drawable.trm), contentDescription = "" , modifier = Modifier.size(112.dp),contentScale = ContentScale.Crop)
                                         Row (modifier=Modifier.fillMaxWidth()){
                                             Column (verticalArrangement = Arrangement.Center, horizontalAlignment = AbsoluteAlignment.Left){
                                                 Text(text = "Karibu Kenya")
@@ -401,6 +428,274 @@ fun HomeScreen(navController: NavHostController) {
 
                             }
                         }
+
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                        Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
+                            Text(text = "Popular vehicles", fontWeight = FontWeight.ExtraBold)
+                    Row(horizontalArrangement = Arrangement.Absolute.Left) {
+                        Card (shape = CircleShape, modifier = Modifier
+                            .size(180.dp)
+                            .clickable {
+                                navController.navigate(ROUTE_HOME) {
+                                    popUpTo(
+                                        ROUTE_SHOP
+                                    )
+                                }
+                            }){
+                            Image(painter = painterResource(id = R.drawable.trm), contentDescription = "",  contentScale = ContentScale.Crop)
+                        }
+                        Text(text = "Ease travel")
+
+                        Spacer(modifier = Modifier.width(15.dp))
+
+                        Card (shape = CircleShape, modifier = Modifier
+                            .size(180.dp)
+                            .clickable {
+                                navController.navigate(ROUTE_HOME) {
+                                    popUpTo(
+                                        ROUTE_SHOP
+                                    )
+                                }
+                            }){
+                            Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
+                        }
+                        Text(text = "Ease travel")
+
+                        Card (shape = CircleShape, modifier = Modifier
+                            .size(180.dp)
+                            .clickable {
+                                navController.navigate(ROUTE_HOME) {
+                                    popUpTo(
+                                        ROUTE_SHOP
+                                    )
+                                }
+                            }){
+                            Image(painter = painterResource(id = R.drawable.trm), contentDescription = "",  contentScale = ContentScale.Crop)
+                        }
+                        Text(text = "Ease travel")
+
+                        Spacer(modifier = Modifier.width(15.dp))
+
+                        Card (shape = CircleShape, modifier = Modifier
+                            .size(180.dp)
+                            .clickable {
+                                navController.navigate(ROUTE_HOME) {
+                                    popUpTo(
+                                        ROUTE_SHOP
+                                    )
+                                }
+                            }){
+                            Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
+                        }
+                        Text(text = "Ease travel")
+                    }
+
+                        }
+
+
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
+
+                            Row(horizontalArrangement = Arrangement.Absolute.Left) {
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Spacer(modifier = Modifier.width(15.dp))
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.bs), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trm), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Spacer(modifier = Modifier.width(15.dp))
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+                            }
+
+                        }
+
+
+
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
+
+                            Row(horizontalArrangement = Arrangement.Absolute.Left) {
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.publict), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Spacer(modifier = Modifier.width(15.dp))
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trm), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Spacer(modifier = Modifier.width(15.dp))
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+                            }
+
+                        }
+
+
+
+
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
+
+                            Row(horizontalArrangement = Arrangement.Absolute.Left) {
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Spacer(modifier = Modifier.width(15.dp))
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trm), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+
+                                Spacer(modifier = Modifier.width(15.dp))
+
+                                Card (shape = CircleShape, modifier = Modifier
+                                    .size(180.dp)
+                                    .clickable {
+                                        navController.navigate(ROUTE_HOME) {
+                                            popUpTo(
+                                                ROUTE_SHOP
+                                            )
+                                        }
+                                    }){
+                                    Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
+                                }
+                                Text(text = "Ease travel")
+                            }
+
+                        }
+
+                        Spacer(modifier = Modifier.height(30.dp))
+
                         Row (horizontalArrangement = Arrangement.SpaceBetween ,modifier=Modifier.fillMaxWidth()){
                             Column( horizontalAlignment = AbsoluteAlignment.Left) {
                                 Text(text = "Recommended Places",fontWeight = FontWeight.ExtraBold,)
@@ -420,9 +715,14 @@ fun HomeScreen(navController: NavHostController) {
                                 Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                                     Card (shape = CircleShape, modifier = Modifier
                                         .size(80.dp)
-                                        .clickable { navController.navigate(ROUTE_HOME) { popUpTo(
-                                            ROUTE_SHOP) } }){
-                                        Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "",  contentScale = ContentScale.Crop)
+                                        .clickable {
+                                            navController.navigate(ROUTE_HOME) {
+                                                popUpTo(
+                                                    ROUTE_SHOP
+                                                )
+                                            }
+                                        }){
+                                        Image(painter = painterResource(id = R.drawable.trn), contentDescription = "",  contentScale = ContentScale.Crop)
                                     }
                                     Text(text = "Vasco da Gama")
                                 }
@@ -431,8 +731,13 @@ fun HomeScreen(navController: NavHostController) {
                                 Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                                     Card (shape = CircleShape, modifier = Modifier
                                         .size(80.dp)
-                                        .clickable { navController.navigate(ROUTE_HOME) { popUpTo(
-                                            ROUTE_SERVICES) } }){
+                                        .clickable {
+                                            navController.navigate(ROUTE_HOME) {
+                                                popUpTo(
+                                                    ROUTE_SERVICES
+                                                )
+                                            }
+                                        }){
                                         Image(painter = painterResource(id = R.drawable.car
                                         ), contentDescription = "", modifier = Modifier.fillMaxSize(),contentScale = ContentScale.Crop)
                                     }
@@ -443,9 +748,14 @@ fun HomeScreen(navController: NavHostController) {
                                 Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                                     Card (shape = CircleShape, modifier = Modifier
                                         .size(80.dp)
-                                        .clickable { navController.navigate(ROUTE_HOME) { popUpTo(
-                                            ROUTE_HOME) } }){
-                                        Image(painter = painterResource(id = R.drawable.klm), contentDescription = "", modifier = Modifier.fillMaxSize(),contentScale = ContentScale.Crop)
+                                        .clickable {
+                                            navController.navigate(ROUTE_HOME) {
+                                                popUpTo(
+                                                    ROUTE_HOME
+                                                )
+                                            }
+                                        }){
+                                        Image(painter = painterResource(id = R.drawable.trn), contentDescription = "", modifier = Modifier.fillMaxSize(),contentScale = ContentScale.Crop)
                                     }
                                     Text(text = "Hell's gate")
                                 }
@@ -454,8 +764,13 @@ fun HomeScreen(navController: NavHostController) {
                                 Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                                     Card (shape = CircleShape, modifier = Modifier
                                         .size(80.dp)
-                                        .clickable { navController.navigate(ROUTE_HOME) { popUpTo(
-                                            ROUTE_SIGNUP) } }){
+                                        .clickable {
+                                            navController.navigate(ROUTE_HOME) {
+                                                popUpTo(
+                                                    ROUTE_SIGNUP
+                                                )
+                                            }
+                                        }){
                                         Image(painter = painterResource(id = R.drawable.klm), contentDescription = "", modifier = Modifier.fillMaxSize(),contentScale = ContentScale.Crop)
                                     }
                                     Text(text = "Travel through Wildebeests")
@@ -464,10 +779,15 @@ fun HomeScreen(navController: NavHostController) {
 
                                 Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                                     Card (shape = CircleShape, modifier = Modifier
-                                        .size(8.dp)
-                                        .clickable { navController.navigate(ROUTE_HOME) { popUpTo(
-                                            ROUTE_SIGNUP) } }){
-                                        Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "",contentScale = ContentScale.Crop)
+                                        .size(80.dp)
+                                        .clickable {
+                                            navController.navigate(ROUTE_HOME) {
+                                                popUpTo(
+                                                    ROUTE_SIGNUP
+                                                )
+                                            }
+                                        }){
+                                        Image(painter = painterResource(id = R.drawable.trm), contentDescription = "",contentScale = ContentScale.Crop)
                                     }
                                     Text(text = "Travel through Fourteen falls")
                                 }
@@ -476,8 +796,13 @@ fun HomeScreen(navController: NavHostController) {
                                 Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                                     Card (shape = CircleShape, modifier = Modifier
                                         .size(80.dp)
-                                        .clickable { navController.navigate(ROUTE_HOME) { popUpTo(
-                                            ROUtE_VIEW_STUDENTS) } }){
+                                        .clickable {
+                                            navController.navigate(ROUTE_HOME) {
+                                                popUpTo(
+                                                    ROUtE_VIEW_STUDENTS
+                                                )
+                                            }
+                                        }){
                                         Image(painter = painterResource(id = R.drawable.yolks), contentDescription = "", modifier = Modifier.fillMaxSize(),contentScale = ContentScale.Crop)
                                     }
                                     Text(text = "Travel through Hot tours")
@@ -517,6 +842,8 @@ fun HomeScreen(navController: NavHostController) {
 
 
     )
+    
+    Spacer(modifier = Modifier.height(40.dp))
 }
 
 
@@ -527,7 +854,7 @@ fun BottomBar(navController: NavHostController) {
     val selectedIndex = remember { mutableStateOf(0) }
     BottomNavigation(
         elevation = 10.dp,
-        backgroundColor = Color(0xff0FB06A)
+        backgroundColor = Color(0xff01735e)
 
 
     ) {
@@ -547,7 +874,7 @@ fun BottomBar(navController: NavHostController) {
             Icon(imageVector = Icons.Default.Favorite,"",tint = Color.White)
         },
             label = { Text(text = "Favorite",color =  Color.White) }, selected = (selectedIndex.value == 1), onClick = {
-                navController.navigate(ROUTE_PRODUCTS) {
+                navController.navigate(ROUTE_SERVICES) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 
@@ -563,7 +890,7 @@ fun BottomBar(navController: NavHostController) {
             selected = (selectedIndex.value == 2),
             onClick = {
 
-                navController.navigate(ROUTE_ABOUT) {
+                navController.navigate(ROUTE_PRODUCTS) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 
@@ -581,7 +908,7 @@ fun BottomBar(navController: NavHostController) {
             selected = (selectedIndex.value == 2),
             onClick = {
 
-                navController.navigate(ROUTE_PRODUCTS) {
+                navController.navigate(ROUTE_SERVICES) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 

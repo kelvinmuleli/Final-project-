@@ -30,8 +30,10 @@ import net.ezra.navigation.ROUTE_CONTACT
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_PRODUCTS
+import net.ezra.navigation.ROUTE_ROUTES_LIST
 import net.ezra.navigation.ROUTE_SERVICES
 import net.ezra.navigation.ROUTE_SHOP
+import net.ezra.navigation.ROUTE_SIGNUP
 import net.ezra.navigation.ROUTE_SPLASH
 
 
@@ -61,7 +63,7 @@ fun SplashScreen(navController: NavHostController) {
                     }))
             // Customize the delay time
             delay(2000L)
-            navController.navigate(ROUTE_SERVICES)
+            navController.navigate(ROUTE_HOME)
         }
 
         // Image
@@ -86,10 +88,10 @@ fun SplashScreen(navController: NavHostController) {
         }
 
         Button(onClick = {
-            navController.navigate(ROUTE_SERVICES) {
+            navController.navigate(ROUTE_HOME) {
                 popUpTo(ROUTE_SPLASH) { inclusive = true }
             }
-        }, shape = CutCornerShape(10)) {
+        }, shape = CutCornerShape(7)) {
             Text(text = "This is a transport app")
         }
 

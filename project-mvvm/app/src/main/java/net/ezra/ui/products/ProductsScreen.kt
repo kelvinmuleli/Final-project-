@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -48,7 +49,7 @@ fun ProductsScreen(navController: NavHostController) {
                 },
             text = "Go home", color = Color(0xff23D342)
         )
-        LazyColumn {
+        LazyRow {
             item {
 
 
@@ -112,6 +113,7 @@ fun ProductsScreen(navController: NavHostController) {
         }
 
 }
+
 
 @Preview(showBackground = true)
 @Composable

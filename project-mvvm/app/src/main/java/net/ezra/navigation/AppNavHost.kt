@@ -9,7 +9,6 @@ import androidx.navigation.compose.rememberNavController
 import net.ezra.ui.SplashScreen
 import net.ezra.ui.about.AboutScreen
 import net.ezra.ui.auth.LoginScreen
-import net.ezra.ui.auth.SignupScreen
 import net.ezra.ui.contact.ContactScreen
 import net.ezra.ui.evening.EveningScreen
 import net.ezra.ui.home.HomeScreen
@@ -124,6 +123,10 @@ fun AppNavHost(
 
 
     }
+}
+
+fun SignupScreen(navController: NavHostController) {
+
 }
 
 fun HomeScreen(navController: NavHostController) {
