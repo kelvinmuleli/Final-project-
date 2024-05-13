@@ -39,6 +39,7 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Icon
@@ -67,9 +68,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.sp
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_PRODUCTS
 import net.ezra.navigation.ROUTE_ROUTES_LIST
@@ -694,6 +699,38 @@ fun HomeScreen(navController: NavHostController) {
 
                         }
 
+
+                        Spacer(modifier = Modifier.height(30.dp))
+
+Row {
+    Button(onClick = {
+        navController.navigate(ROUTE_ROUTES_LIST) {
+            popUpTo(ROUTE_HOME) { inclusive = true }
+        }
+        //your onclick code here
+    }) {
+        Text(text = "Details ", color = Color.Blue,
+            fontWeight = FontWeight.ExtraBold, fontFamily = FontFamily.Cursive,)
+        Text(text = "", color = Color.Green,fontWeight = FontWeight.ExtraBold
+            ,fontFamily = FontFamily.Serif,)
+    }
+
+    Spacer(modifier = Modifier.width(30.dp))
+
+    Text(
+        modifier = Modifier
+            .clickable {
+                navController.navigate(ROUTE_ROUTES_LIST) {
+                    popUpTo(ROUTE_HOME) { inclusive = true }
+                }
+            },
+        text = "Next>>", color = Color(0xff1233ed)
+    )
+
+
+}
+
+
                         Spacer(modifier = Modifier.height(30.dp))
 
                         Row (horizontalArrangement = Arrangement.SpaceBetween ,modifier=Modifier.fillMaxWidth()){
@@ -844,8 +881,9 @@ fun HomeScreen(navController: NavHostController) {
     )
     
     Spacer(modifier = Modifier.height(40.dp))
-}
 
+
+}
 
 
 
@@ -908,7 +946,7 @@ fun BottomBar(navController: NavHostController) {
             selected = (selectedIndex.value == 2),
             onClick = {
 
-                navController.navigate(ROUTE_SERVICES) {
+                navController.navigate(ROUTE_ROUTES_LIST) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 

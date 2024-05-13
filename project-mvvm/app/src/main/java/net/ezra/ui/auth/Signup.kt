@@ -3,9 +3,9 @@ package net.ezra.ui.auth
 
 
 
-
-import android.content.res.Configuration
+import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -22,12 +22,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.auth.FirebaseAuth
 import net.ezra.navigation.ROUTE_LOGIN
+//import net.ezra.navigation.ROUTE_REGISTER
 import net.ezra.navigation.ROUTE_SIGNUP
-import net.ezra.ui.routes.MitScreen
+//import net.ezra.ui.ezra.onSignUpSuccess
 
 
 @Composable
-fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
+fun SignUpScreen(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
@@ -40,7 +41,8 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .background(Color(0xffbdd5d6)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -53,7 +55,7 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("Email") },
+            label = { Text("Email", color = Color.White) },
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(8.dp))
@@ -62,7 +64,7 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text("Password") },
+            label = { Text("Password", color = Color.White) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth()
         )
@@ -71,7 +73,7 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
         OutlinedTextField(
             value = confirmPassword,
             onValueChange = { confirmPassword = it },
-            label = { Text("Confirm Password") },
+            label = { Text("Confirm Password",color = Color.White) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth()
         )
@@ -81,7 +83,7 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
             CircularProgressIndicator(modifier = Modifier.size(48.dp))
         } else {
             Button(
-                colors = ButtonDefaults.buttonColors(Color(0xff0FB06A)),
+                colors = ButtonDefaults.buttonColors(Color(0xff20d2e3)),
                 onClick = {
                     if (email.isBlank()){
                         error = "Email is required"
@@ -105,7 +107,7 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Sign Up")
+                Text("Sign Up",color = Color.White)
             }
 
 
@@ -117,9 +119,10 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
                             popUpTo(ROUTE_SIGNUP) { inclusive = true }
                         }
                     },
-                text = "go to login",
+                text = "Already have an account!Go to login",
                 textAlign = TextAlign.Center,
-                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurface
+                color = Color.White
+//                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurface
             )
 
         }
@@ -133,6 +136,11 @@ fun SignUpScreen(navController: NavController, onSignUpSuccess: () -> Unit) {
         }
     }
 }
+
+fun onSignUpSuccess() {
+    TODO("Not yet implemented")
+}
+
 private fun signUp(email: String, password: String, onSuccess: () -> Unit, onError: (String) -> Unit) {
     FirebaseAuth.getInstance().fetchSignInMethodsForEmail(email)
         .addOnCompleteListener { task ->
@@ -157,4 +165,9 @@ private fun signUp(email: String, password: String, onSuccess: () -> Unit, onErr
         }
 }
 
+@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_NO)
+@Composable
+fun SignupScreenPreviewLight() {
+    SignUpScreen(rememberNavController())
+}
 

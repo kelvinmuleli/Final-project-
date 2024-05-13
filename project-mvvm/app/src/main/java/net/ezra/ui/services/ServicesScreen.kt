@@ -72,6 +72,7 @@ import net.ezra.navigation.ROUTE_ADD_STUDENTS
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_PRODUCTS
+import net.ezra.navigation.ROUTE_ROUTES_LIST
 import net.ezra.navigation.ROUTE_SERVICES
 import net.ezra.navigation.ROUTE_SIGNUP
 
@@ -94,7 +95,7 @@ fun ServicesScreen(navController: NavHostController) {
             CenterAlignedTopAppBar(
                 title = {
                     Text(text = "Ease transpi")
-                    // Text(text = stringResource(id = R.string.apen))
+                    // Text(text = stringResource(id = R.string.kelvin))
                 },
                 navigationIcon = @Composable {
                     if (!isDrawerOpen) {
@@ -523,7 +524,7 @@ fun BottomBar(navController: NavHostController) {
             Icon(imageVector = Icons.Default.Favorite,"",tint = Color.White)
         },
             label = { Text(text = "Favorite",color =  Color.White) }, selected = (selectedIndex.value == 1), onClick = {
-                navController.navigate(ROUTE_PRODUCTS) {
+                navController.navigate(ROUTE_SERVICES) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 
@@ -539,7 +540,7 @@ fun BottomBar(navController: NavHostController) {
             selected = (selectedIndex.value == 2),
             onClick = {
 
-                navController.navigate(ROUTE_ABOUT) {
+                navController.navigate(ROUTE_ADD_STUDENTS) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 
@@ -557,7 +558,7 @@ fun BottomBar(navController: NavHostController) {
             selected = (selectedIndex.value == 2),
             onClick = {
 
-                navController.navigate(ROUTE_PRODUCTS) {
+                navController.navigate(ROUTE_ROUTES_LIST) {
                     popUpTo(ROUTE_HOME) { inclusive = true }
                 }
 

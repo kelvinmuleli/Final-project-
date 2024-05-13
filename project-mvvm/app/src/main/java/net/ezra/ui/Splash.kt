@@ -26,6 +26,7 @@ import kotlinx.coroutines.delay
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ABOUT
 import net.ezra.navigation.ROUTE_ADD_STUDENTS
+import net.ezra.navigation.ROUTE_BOOKMARKED_ROUTES
 import net.ezra.navigation.ROUTE_CONTACT
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
@@ -57,12 +58,12 @@ fun SplashScreen(navController: NavHostController) {
                 targetValue = 0.7f,
                 // tween Animation
                 animationSpec = tween(
-                    durationMillis = 7000,
+                    durationMillis = 700,
                     easing = {
                         OvershootInterpolator(4f).getInterpolation(it)
                     }))
             // Customize the delay time
-            delay(2000L)
+            delay(3L)
             navController.navigate(ROUTE_HOME)
         }
 
@@ -73,10 +74,10 @@ fun SplashScreen(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ){
 
-            Image(painter = painterResource(id = R.drawable.splash),
-                contentDescription = "Logo",
-                modifier = Modifier.scale(scale.value)
-            )
+//            Image(painter = painterResource(id = R.drawable.splash),
+//                contentDescription = "Logo",
+//                modifier = Modifier.scale(scale.value)
+//            )
 
             Text("Muleli Softwares", textAlign = TextAlign.Center, )
             Spacer(modifier = Modifier.height(110.dp))

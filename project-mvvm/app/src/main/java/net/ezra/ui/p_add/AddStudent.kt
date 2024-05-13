@@ -66,7 +66,7 @@ fun AddStudents(navController: NavHostController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xff81f109))
+            .background(Color(0xff62c2f2))
     ) {
         item {
             Box(
@@ -94,7 +94,7 @@ fun AddStudents(navController: NavHostController) {
                             }
                         },
                         colors = TopAppBarDefaults.topAppBarColors(
-                            containerColor = Color.Gray,
+                            containerColor = Color.Black,
                             titleContentColor = Color.Red,
                             navigationIconContentColor = Color.Blue
                         ),
@@ -130,7 +130,7 @@ fun AddStudents(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
 
-                Text( "Register ", fontSize = 30.sp)
+                Text( "Register  here for a journey!!!", fontSize = 30.sp)
 
                 var photoUri: Uri? by remember { mutableStateOf(null) }
                 val launcher = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
@@ -253,7 +253,7 @@ fun AddStudents(navController: NavHostController) {
 
                 }) {
 
-                    Text(text = "Register")
+                    Text(text = "Register here for a journey!!!")
 
 
                 }

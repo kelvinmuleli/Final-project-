@@ -29,6 +29,11 @@ import net.ezra.navigation.ROUTE_SHOP
 
 @Composable
 fun ProductsScreen(navController: NavHostController) {
+    
+
+
+
+
 
     Column(
         modifier = Modifier
@@ -49,6 +54,8 @@ fun ProductsScreen(navController: NavHostController) {
                 },
             text = "Go home", color = Color(0xff23D342)
         )
+
+
         LazyRow {
             item {
 

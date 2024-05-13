@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,6 +30,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -47,27 +50,33 @@ import net.ezra.navigation.ROUTE_SPLASH
 @Composable
 fun MitScreen(navController: NavHostController) {
 
-    Box {
 
+Column (
+    verticalArrangement = Arrangement.Top
 
-        Image(painter = painterResource(id = R.drawable.trn),
-            contentDescription = "",
-            modifier = Modifier
-                .fillMaxSize(),
-            contentScale = ContentScale.Crop
+){
+    Image(painter = painterResource(id =R.drawable.yolks ) ,
+        contentDescription ="yolks" )
 
+}
 
-        )
+    Spacer(modifier = Modifier.height(91.dp))
 
-        Spacer(modifier = Modifier.height(100.dp))
+Column(
+    verticalArrangement = Arrangement.Center
+) {
 
+    Text(text ="Welcome to RoadRover Transport! Log in or You can continue as a guest to tour???", fontWeight = FontWeight.ExtraBold, fontFamily = FontFamily.Serif )
 
+}
 
- Column(
+ Column(modifier = Modifier
+     .background(Color.Transparent)
+     .fillMaxSize()
+     ,
      verticalArrangement = Arrangement.Bottom,
      horizontalAlignment = Alignment.CenterHorizontally
  ) {
-
 
 
 
@@ -89,7 +98,7 @@ fun MitScreen(navController: NavHostController) {
 
 
      Button(onClick = {
-         navController.navigate(ROUTE_HOME) {
+         navController.navigate(ROUTE_ADD_STUDENTS) {
              popUpTo(ROUTE_ROUTES_LIST) { inclusive = true }
          }
      }, shape = RoundedCornerShape(19.dp))  {
@@ -116,7 +125,7 @@ fun MitScreen(navController: NavHostController) {
 
 
 
- }
+
 
 
 
